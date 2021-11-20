@@ -10,6 +10,7 @@ import {
   Checkbox,
   FormControlLabel,
   Button,
+  FormGroup,
 } from "@mui/material";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
@@ -32,7 +33,7 @@ function Form() {
 
   return (
     <div id="form-wrapper">
-      <Card sx={{ maxWidth: 700 }}>
+      <Card>
         <CardMedia
           component="img"
           height="140"
@@ -108,16 +109,18 @@ function Form() {
               />
             </div>
 
-            <FormControlLabel
-              control={<Checkbox ref={riskCheck} />}
-              label="Concordo estar ciente acerca dos riscos envolvendo o passeio. *"
-            />
-
-            <FormControlLabel
-              control={<Checkbox ref={certificateCheck} />}
-              label="Concordo estar compromissado em trazer um atestado médico com
+            <FormGroup>
+              <FormControlLabel
+                control={<Checkbox ref={riskCheck} />}
+                label="Concordo estar ciente acerca dos riscos envolvendo o passeio. *"
+              />
+              <br />
+              <FormControlLabel
+                control={<Checkbox ref={certificateCheck} />}
+                label="Concordo estar compromissado em trazer um atestado médico com
                   a permissão de atividades aeróbicas. *"
-            />
+              />
+            </FormGroup>
           </Box>
           <div className="margin-top-div">
             <Button variant="contained" startIcon={<EventAvailableIcon />}>
