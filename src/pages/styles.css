@@ -27,3 +27,14 @@
 .margin-top-div {
   margin-top: 2rem;
 }
+
+@media screen and (max-width: 425.9px) {
+  .nowrap-div {
+    flex-wrap: wrap;
+  }
+
+  .nowrap-div > div {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
