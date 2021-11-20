@@ -133,9 +133,9 @@ function Form() {
                 label="Telefone/Celular"
                 placeholder="(99) 99999-9999"
                 value={cellphone}
-                onKeyDown={(event) => {
-                  setCellphone(fillCellphone(event.key, cellphone));
-                }}
+                onChange={({ target }) =>
+                  setCellphone(fillCellphone(target.value, cellphone))
+                }
                 margin="normal"
               />
             </div>

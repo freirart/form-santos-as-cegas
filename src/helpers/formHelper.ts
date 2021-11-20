@@ -7,16 +7,12 @@ export const mask = (value: string, pattern: string) => {
   return pattern.replace(/#/g, () => v[i++] || "");
 };
 
-export const fillCellphone = (keyPressed: string, currValue: string) => {
-  const erasingKeys = ["Backspace", "ArrowLeft"];
-
-  if (erasingKeys.includes(keyPressed)) {
-    return _.initial(currValue).join("");
+export const fillCellphone = (currValue: string, prevValue: string) => {
+  if (currValue === _.initial(prevValue).join("") || !currValue) {
+    return currValue;
   }
 
-  const formattedValue = (currValue + keyPressed).replace(/\D/g, "");
-
-  return mask(formattedValue, "(##) #####-####");
+  return mask(currValue.replace(/\D/g, ""), "(##) #####-####");
 };
 
 export const fillAge = (value: string) => {
