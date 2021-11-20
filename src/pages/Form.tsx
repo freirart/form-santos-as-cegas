@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import {
   Card,
@@ -11,10 +11,11 @@ import {
   FormControlLabel,
   Button,
   FormGroup,
+  Tooltip,
 } from "@mui/material";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
-import { fillTelephone, fillAge, fillEmail } from "../helpers/formHelper";
+import { fillAge, fillEmail, fillCellphone } from "../helpers/formHelper";
 
 import cardHeaderImg from "../assets/images/santos-as-cegas-form-header.jpg";
 
@@ -25,11 +26,21 @@ function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cellphone, setCellphone] = useState("");
+  const [checkedRisk, setCheckedRisk] = useState(false);
+  const [checkedCertificate, setCheckedCertificate] = useState(false);
 
+  const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
-  const riskCheck = useRef(null);
-  const certificateCheck = useRef(null);
+  const isBtnDisabled =
+    emailError ||
+    nameError ||
+    !name ||
+    !email ||
+    !age ||
+    !cellphone ||
+    !checkedRisk ||
+    !checkedCertificate;
 
   return (
     <div id="form-wrapper">
@@ -62,7 +73,23 @@ function Form() {
               fullWidth
               placeholder="Renato Frosch"
               value={name}
-              onChange={({ target }) => setName(target.value)}
+              error={nameError}
+              onChange={({ target }) => {
+                const inputtedName = target.value;
+                setName(target.value);
+
+                if (inputtedName) {
+                  setNameError(false);
+                }
+              }}
+              onBlur={({ target }) => {
+                const inputtedName = target.value;
+
+                if (!inputtedName) {
+                  setNameError(true);
+                }
+              }}
+              helperText={nameError ? "Insira um nome!" : null}
             />
             <TextField
               required
@@ -82,7 +109,9 @@ function Form() {
               onBlur={({ target }) => {
                 const typedEmail = target.value;
 
-                if (typedEmail) {
+                if (!typedEmail) {
+                  setEmailError(true);
+                } else {
                   setEmailError(fillEmail(typedEmail));
                 }
               }}
@@ -96,6 +125,7 @@ function Form() {
                 fullWidth
                 value={age}
                 onChange={({ target }) => setAge(fillAge(target.value))}
+                margin="normal"
               />
               <TextField
                 required
@@ -103,29 +133,51 @@ function Form() {
                 label="Telefone/Celular"
                 placeholder="(99) 99999-9999"
                 value={cellphone}
-                onChange={({ target }) =>
-                  setCellphone(fillTelephone(target.value))
-                }
+                onKeyDown={(event) => {
+                  setCellphone(fillCellphone(event.key, cellphone));
+                }}
+                margin="normal"
               />
             </div>
 
             <FormGroup>
               <FormControlLabel
-                control={<Checkbox ref={riskCheck} />}
+                control={
+                  <Checkbox
+                    onChange={({ target }) => setCheckedRisk(target.checked)}
+                  />
+                }
                 label="Concordo estar ciente acerca dos riscos envolvendo o passeio. *"
               />
               <br />
               <FormControlLabel
-                control={<Checkbox ref={certificateCheck} />}
+                control={
+                  <Checkbox
+                    onChange={({ target }) =>
+                      setCheckedCertificate(target.checked)
+                    }
+                  />
+                }
                 label="Concordo estar compromissado em trazer um atestado médico com
                   a permissão de atividades aeróbicas. *"
               />
             </FormGroup>
           </Box>
           <div className="margin-top-div">
-            <Button variant="contained" startIcon={<EventAvailableIcon />}>
-              Agendar
-            </Button>
+            <Tooltip
+              title={isBtnDisabled ? "Informações incompletas!" : ""}
+              placement="top"
+            >
+              <span>
+                <Button
+                  variant="contained"
+                  startIcon={<EventAvailableIcon />}
+                  disabled={isBtnDisabled}
+                >
+                  Agendar
+                </Button>
+              </span>
+            </Tooltip>
           </div>
         </CardContent>
       </Card>

@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export const mask = (value: string, pattern: string) => {
   let i = 0;
   const v = value.toString();
@@ -5,18 +7,16 @@ export const mask = (value: string, pattern: string) => {
   return pattern.replace(/#/g, () => v[i++] || "");
 };
 
-export const fillTelephone = (value: string) => {
-  if (!value) {
-    return value;
+export const fillCellphone = (keyPressed: string, currValue: string) => {
+  const erasingKeys = ["Backspace", "ArrowLeft"];
+
+  if (erasingKeys.includes(keyPressed)) {
+    return _.initial(currValue).join("");
   }
 
-  const formattedValue = value.replace(/\D/g, "");
+  const formattedValue = (currValue + keyPressed).replace(/\D/g, "");
 
-  if (value.length > 7) {
-    return mask(formattedValue, "(##) #####-####");
-  }
-
-  return formattedValue;
+  return mask(formattedValue, "(##) #####-####");
 };
 
 export const fillAge = (value: string) => {
