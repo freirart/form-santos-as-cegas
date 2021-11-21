@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Trabalho prático de Interação Homem-Computador II
+🧑🏻‍💻
+## Proposta 👀
+O trabalho consiste em desenvolver uma interface web que possibilite o agendamento de passeios com o projeto <a href="https://g1.globo.com/sp/santos-regiao/noticia/2021/02/11/projeto-promove-passeio-inclusivo-para-pessoas-com-deficiencia-visual-em-santos-sp.ghtml" target="_blank">Santos às Cegas</a> através do preenchimento de um formulário. A interface deve ser responsiva e compatível com acessibilidade (WCAG AA), de forma que o usuário deve informar os seguintes dados:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Nome, idade, telefone e-mail
+2. Data do passeio
+3. Confirmação de termo de consentimento dos riscos envolvidos no passeio
+4. Confirmação do compromisso em trazer Atestado Médico possibilitando atividades físicas aeróbicas.
 
-## Available Scripts
+## Deploy 🚀
+A aplicação está disponível através <a href="" target="_blank">deste link</a>!
 
-In the project directory, you can run:
+## Tecnologias 🛠
+Foram utilizadas as seguintes ferramentas para o desenvolvimento da interface:
+- [Create React App](https://create-react-app.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Material UI](https://mui.com/)
 
-### `yarn start`
+## Licença 💼
+Direitos Reservados 2021 UNISANTOS - BR
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Permissão é garantida por este meio, livre de ônus, para qualquer pessoa que obtenha uma cópia desde software e arquivos de documentação associados, para lidar com o Software sem restrições, incluindo nenhuma limitação de direitos de uso, cópia, modificação, fusão, publicação, distribuição, sublicenciamento, e/ou venda de cópias do Software, e para permitir que pessoas a quem foi fornecido o Software façam o mesmo, sujeitos às seguintes condições:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+A nota de direitos reservados acima, e a nota de permissão devem ser incluídas em todas as cópias ou porções substanciais do Software.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+O SOFTWARE É FORNECIDO “COMO É”, SEM QUALQUER TIPO DE GARANTIAS, EXPRESSA OU IMPLÍCITA, INCLUINDO PORÉM AS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUADAS PARA UM DETERMINADO PROPÓSITO E NÃO VIOLAÇÃO. EM NENHUMA HIPÓTESE DEVERÃO OS AUTORES OU DETENTORES DOS DIREITOS AUTORAIS SEREM RESPONSÁVEIS POR ALGUMA RECLAMAÇÃO, DANO OU OUTRA SUSCETIBILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, DELITO OU DE OUTRA FORMA, DECORRENTES, DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS AÇÕES DO SOFTWARE.
