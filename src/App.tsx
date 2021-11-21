@@ -1,9 +1,18 @@
 import React from "react";
-import "./assets/styles/global.css";
+
+import AdapterMoment from "@mui/lab/AdapterMoment";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+
 import Routes from "./routes";
 
+import "./assets/styles/global.css";
+
 function App() {
-  return <Routes />;
+  return (
+    <LocalizationProvider dateAdapter={AdapterMoment}>
+      <Routes />
+    </LocalizationProvider>
+  );
 }
 
 export default App;

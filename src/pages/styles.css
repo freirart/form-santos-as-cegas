@@ -32,6 +32,16 @@
   margin-top: 2rem;
 }
 
+.helperText {
+  transition: 0.2s;
+}
+
+.helperText.hidden {
+  opacity: 0;
+  user-select: none;
+  cursor: default;
+}
+
 @media (max-width: 425.9px) {
   .nowrap-div {
     flex-wrap: wrap;

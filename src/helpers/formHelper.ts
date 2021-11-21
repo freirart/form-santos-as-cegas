@@ -1,5 +1,9 @@
 import _ from "lodash";
 
+export const cellPhoneMask = "(##) #####-####";
+
+export const isoDateMask = "YYYY-MM-DD";
+
 export const mask = (value: string, pattern: string) => {
   let i = 0;
   const v = value.toString();
@@ -12,7 +16,7 @@ export const fillCellphone = (currValue: string, prevValue: string) => {
     return currValue;
   }
 
-  return mask(currValue.replace(/\D/g, ""), "(##) #####-####");
+  return mask(currValue.replace(/\D/g, ""), cellPhoneMask);
 };
 
 export const fillAge = (value: string) => {
@@ -35,4 +39,8 @@ export const fillEmail = (value: string) => {
   const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
 
   return !regex.test(value);
+};
+
+export const isCellphoneCorrect = (cellPhone: string) => {
+  return cellPhone && cellPhone.length === cellPhoneMask.length;
 };
