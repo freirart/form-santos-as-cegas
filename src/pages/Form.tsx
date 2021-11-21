@@ -151,7 +151,7 @@ function Form() {
                     setEmailError(fillEmail(typedEmail));
                   }
                 }}
-                helperText={emailError ? "Insira com um e-mail válido!" : " "}
+                helperText={emailError ? "Insira um e-mail válido!" : " "}
               />
               <div className="nowrap-div">
                 <TextField
@@ -200,9 +200,7 @@ function Form() {
                       {...props}
                       required
                       error={dateError}
-                      helperText={
-                        dateError ? "Entre com uma data válida!" : " "
-                      }
+                      helperText={dateError ? "Insira uma data válida!" : " "}
                       onChange={handleDate}
                       onBlur={handleDate}
                     />

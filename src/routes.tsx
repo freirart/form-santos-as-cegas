@@ -6,7 +6,7 @@ import Form from "./pages/Form";
 function Routes() {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={Form} />
+      <Route path="/" component={Form} />
     </BrowserRouter>
   );
 }
