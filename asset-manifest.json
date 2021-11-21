@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/form-santos-as-cegas/static/css/main.ae10e78a.chunk.css",
-    "main.js": "/form-santos-as-cegas/static/js/main.f94d00e6.chunk.js",
-    "main.js.map": "/form-santos-as-cegas/static/js/main.f94d00e6.chunk.js.map",
+    "main.js": "/form-santos-as-cegas/static/js/main.580a51a4.chunk.js",
+    "main.js.map": "/form-santos-as-cegas/static/js/main.580a51a4.chunk.js.map",
     "runtime-main.js": "/form-santos-as-cegas/static/js/runtime-main.dc0f3d47.js",
     "runtime-main.js.map": "/form-santos-as-cegas/static/js/runtime-main.dc0f3d47.js.map",
     "static/js/2.1423f7f9.chunk.js": "/form-santos-as-cegas/static/js/2.1423f7f9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.dc0f3d47.js",
     "static/js/2.1423f7f9.chunk.js",
     "static/css/main.ae10e78a.chunk.css",
-    "static/js/main.f94d00e6.chunk.js"
+    "static/js/main.580a51a4.chunk.js"
   ]
 }
