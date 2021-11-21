@@ -13,6 +13,11 @@ import {
   Button,
   FormGroup,
   Tooltip,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material";
 import { DatePicker } from "@mui/lab";
 
@@ -43,6 +48,8 @@ function Form() {
   const [selectedDate, setSelectedDate] = useState<moment.Moment | null>(null);
   const [checkedRisk, setCheckedRisk] = useState(false);
   const [checkedCertificate, setCheckedCertificate] = useState(false);
+
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const [nameError, setNameError] = useState<undefined | boolean>(undefined);
   const [emailError, setEmailError] = useState<undefined | boolean>(undefined);
@@ -109,11 +116,9 @@ function Form() {
                 error={nameError}
                 onChange={({ target }) => {
                   const inputtedName = target.value;
-                  setName(target.value);
+                  setName(inputtedName);
 
-                  if (inputtedName) {
-                    setNameError(false);
-                  }
+                  setNameError(!inputtedName);
                 }}
                 onBlur={({ target }) => {
                   const inputtedName = target.value;
@@ -127,17 +132,15 @@ function Form() {
               <TextField
                 required
                 fullWidth
-                label="E-mail"
+                label="Seu melhor e-mail"
                 value={email}
                 error={emailError}
                 placeholder="santosascegas@gmail.com"
                 onChange={({ target }) => {
                   const typedEmail = target.value;
 
-                  if (typedEmail && emailError) {
-                    setEmailError(fillEmail(typedEmail));
-                  }
                   setEmail(typedEmail);
+                  setEmailError(fillEmail(typedEmail));
                 }}
                 onBlur={({ target }) => {
                   const typedEmail = target.value;
@@ -179,9 +182,7 @@ function Form() {
 
                     setCellphone(fillCellphone(typedCellphone, cellphone));
 
-                    if (cellphoneError) {
-                      setCellphoneError(!isCellphoneCorrect(typedCellphone));
-                    }
+                    setCellphoneError(!isCellphoneCorrect(typedCellphone));
                   }}
                   onBlur={({ target }) =>
                     setCellphoneError(!isCellphoneCorrect(target.value))
@@ -212,6 +213,12 @@ function Form() {
                 minDate={moment()}
                 onChange={(newValue) => setSelectedDate(newValue)}
                 inputFormat="DD/MM/YYYY"
+                shouldDisableDate={(date) => date < comparisonDate}
+                onAccept={() => {
+                  if (dateError) {
+                    setDateError(false);
+                  }
+                }}
               />
             </Stack>
           </div>
@@ -251,6 +258,7 @@ function Form() {
                   variant="contained"
                   startIcon={<EventAvailableIcon />}
                   disabled={isBtnDisabled}
+                  onClick={() => setDialogOpen(true)}
                 >
                   Agendar
                 </Button>
@@ -259,6 +267,32 @@ function Form() {
           </div>
         </CardContent>
       </Card>
+
+      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+        <DialogTitle id="responsive-dialog-title">
+          [MOCK] O seu pedido de agendamento foi enviado com sucesso!{" "}
+          <span aria-label="Apaixonado" role="img">
+            😍
+          </span>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Em breve você receberá um e-mail de confirmação com os dados aqui
+            informados com a respectiva resposta do agendamento.
+          </DialogContentText>
+          <br />
+          <DialogContentText>
+            Não esqueça de checar a caixa de spam para ficar ligado na situação
+            do seu pedido!{" "}
+            <span aria-label="Apaixonado" role="img">
+              😉
+            </span>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setDialogOpen(false)}>Ok</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
