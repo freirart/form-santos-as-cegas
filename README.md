@@ -1,5 +1,14 @@
 # Trabalho prático de Interação Homem-Computador II
-🧑🏻‍💻
+
+## Integrantes 🧑‍💻
+
+- Artur Freire
+- Fabio Moreira
+- Gabriel Gonçales
+- Gustavo Medeiros
+- Lucas Anjos
+- Vinicius Freire
+
 ## Proposta 👀
 O trabalho consiste em desenvolver uma interface web que possibilite o agendamento de passeios com o projeto <a href="https://g1.globo.com/sp/santos-regiao/noticia/2021/02/11/projeto-promove-passeio-inclusivo-para-pessoas-com-deficiencia-visual-em-santos-sp.ghtml" target="_blank">Santos às Cegas</a> através do preenchimento de um formulário. A interface deve ser responsiva e compatível com acessibilidade (WCAG AA), de forma que o usuário deve informar os seguintes dados:
 
@@ -9,7 +18,7 @@ O trabalho consiste em desenvolver uma interface web que possibilite o agendamen
 4. Confirmação do compromisso em trazer Atestado Médico possibilitando atividades físicas aeróbicas.
 
 ## Deploy 🚀
-A aplicação está disponível através <a href="" target="_blank">deste link</a>!
+A aplicação está disponível através <a href="https://freirart.github.io/form-santos-as-cegas/" target="_blank">deste link</a>!
 
 ## Tecnologias 🛠
 Foram utilizadas as seguintes ferramentas para o desenvolvimento da interface:
